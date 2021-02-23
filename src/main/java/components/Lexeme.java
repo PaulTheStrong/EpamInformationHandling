@@ -7,4 +7,8 @@ public abstract class Lexeme implements Component {
     public Lexeme(String value) {
         this.value = value;
     }
+
+    public String getValue() {
+        return value;
+    }
 }

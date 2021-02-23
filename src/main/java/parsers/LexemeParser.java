@@ -4,6 +4,10 @@ import components.Component;
 import components.Composite;
 import components.Expression;
 import components.Word;
+import creators.AbstractStringAssembler;
+import creators.ParagraphAssembler;
+import creators.SentenceAssembler;
+import creators.TextAssembler;
 
 public class LexemeParser extends AbstractParser {
 
@@ -23,13 +27,17 @@ public class LexemeParser extends AbstractParser {
     }
 
     public static void main(String[] args) {
-        String text = "It has survived - not only [5] centuries, but also the leap into [13<<2] electronic typesetting, remaining [3>>5] essentially [6&9|(3&4)] unchanged. It was popularised in the [5|(1&2&(3|(4&(2^5|6&47)|3)|2)|1)] with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  \n" +
-                "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using (71&(2&3|(3|(2&1>>2|2)&2)|10&2))|78 Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using (Content here), content here, making it look like readable English.\n" +
-                "It is a 8^5|1&2<<(2|5>>2&71))|1200 established fact that a reader will be of a page when looking at its layout.\n" +
-                "Bye. \n";
+        String text = "Hello world. This is a sentence.\n" +
+                "This is another sentence. In second paragraph.\n" +
+                "This is an expression [3 + 5]. Expression number [1 + 1].";
 
         AbstractParser rootParser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(null))));
 
         Composite composite = (Composite) rootParser.parse(text);
+
+        AbstractStringAssembler assembler = new TextAssembler(new ParagraphAssembler(new SentenceAssembler(null)));
+        String assembledText = assembler.assemble(composite);
+        System.out.println(assembledText);
+        System.out.println(assembledText.equals(text));
     }
 }

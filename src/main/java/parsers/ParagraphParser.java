@@ -5,7 +5,7 @@ import components.Composite;
 
 public class ParagraphParser extends AbstractParser {
 
-    private static final String SPLITTER = "\\. ";
+    private static final String SPLITTER = "\\. ?";
 
     public ParagraphParser(AbstractParser successor) {
         super(successor);
