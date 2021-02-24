@@ -1,7 +1,6 @@
-package creators;
+package by.epam.training.tasks.information.handling.creators;
 
-import components.Component;
-import components.Composite;
+import by.epam.training.tasks.information.handling.components.Composite;
 
 public abstract class AbstractStringAssembler {
 

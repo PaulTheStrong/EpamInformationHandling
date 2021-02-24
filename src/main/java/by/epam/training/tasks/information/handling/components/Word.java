@@ -1,4 +1,4 @@
-package components;
+package by.epam.training.tasks.information.handling.components;
 
 public class Word extends Lexeme {
 

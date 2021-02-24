@@ -1,4 +1,4 @@
-package components;
+package by.epam.training.tasks.information.handling.components;
 
 import java.util.ArrayList;
 import java.util.List;
