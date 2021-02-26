@@ -20,6 +20,6 @@ public class ParagraphAssembler extends AbstractStringAssembler {
         return paragraph.getComponents()
                 .stream()
                 .map(currentSentence -> successor.assemble((Composite) currentSentence))
-                .collect(Collectors.joining(". ")) + ".";
+                .collect(Collectors.joining(DELIMITER)) + ".";
     }
 }

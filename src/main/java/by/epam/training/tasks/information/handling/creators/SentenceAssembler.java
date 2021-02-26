@@ -19,6 +19,6 @@ public class SentenceAssembler extends AbstractStringAssembler {
         return sentence.getComponents()
                 .stream()
                 .map(currentLexeme -> ((Lexeme)currentLexeme).getValue())
-                .collect(Collectors.joining(" "));
+                .collect(Collectors.joining(DELIMITER));
     }
 }

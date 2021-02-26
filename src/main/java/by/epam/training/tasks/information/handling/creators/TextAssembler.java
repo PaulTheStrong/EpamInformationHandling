@@ -18,6 +18,6 @@ public class TextAssembler extends AbstractStringAssembler {
         return text.getComponents()
                 .stream()
                 .map(currentParagraph -> successor.assemble((Composite) currentParagraph))
-                .collect(Collectors.joining("\n"));
+                .collect(Collectors.joining(DELIMITER));
     }
 }

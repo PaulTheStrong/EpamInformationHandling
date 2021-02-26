@@ -5,10 +5,18 @@ import java.util.List;
 
 public class Composite implements Component {
 
-    private final List<Component> components = new ArrayList<>();
+    private final List<Component> components;
 
     public void add(Component component) {
         components.add(component);
+    }
+
+    public Composite() {
+        this.components = new ArrayList<>();
+    }
+
+    public Composite(List<Component> components) {
+        this.components = components;
     }
 
     public List<Component> getComponents() {

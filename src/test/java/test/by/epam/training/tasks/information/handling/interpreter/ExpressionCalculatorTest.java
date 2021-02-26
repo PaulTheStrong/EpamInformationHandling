@@ -1,6 +1,6 @@
 package test.by.epam.training.tasks.information.handling.interpreter;
 
-import by.epam.training.tasks.information.handling.components.Expression;
+import by.epam.training.tasks.information.handling.components.Lexeme;
 import by.epam.training.tasks.information.handling.interpreter.ExpressionCalculator;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class ExpressionCalculatorTest {
     @Test
     public void testCalculateFunction() {
         //given
-        Expression expression = new Expression(TEST_STRING);
+        Lexeme expression = new Lexeme(TEST_STRING, Lexeme.Type.EXPRESSION);
         int expected = 21;
         ExpressionCalculator calculator = new ExpressionCalculator();
 

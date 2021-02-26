@@ -1,11 +1,17 @@
 package by.epam.training.tasks.information.handling.components;
 
-public abstract class Lexeme implements Component {
+public class Lexeme implements Component {
 
-    protected String value;
+    public enum Type {
+        EXPRESSION, WORD
+    }
 
-    public Lexeme(String value) {
+    private String value;
+    private Type type;
+
+    public Lexeme(String value, Type type) {
         this.value = value;
+        this.type = type;
     }
 
     public String getValue() {

@@ -1,13 +1,13 @@
 package by.epam.training.tasks.information.handling.interpreter;
 
-import by.epam.training.tasks.information.handling.components.Expression;
+import by.epam.training.tasks.information.handling.components.Lexeme;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExpressionCalculator {
 
-    public int calculate(Expression expression) {
+    public int calculate(Lexeme expression) {
         Context context = new Context();
         String expressionValue = expression.getValue();
         String withoutBrackets = expressionValue.substring(1, expressionValue.length() - 1);

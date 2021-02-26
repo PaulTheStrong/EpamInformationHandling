@@ -1,6 +1,7 @@
 package by.epam.training.tasks.information.handling.parsers;
 
 import by.epam.training.tasks.information.handling.components.*;
+import by.epam.training.tasks.information.handling.interpreter.ExpressionCalculator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,12 +26,13 @@ public class SentenceParser extends AbstractParser{
     public Component parse(String input) {
         Composite sentence = new Composite();
         Matcher matcher = PATTERN.matcher(input);
+        ExpressionCalculator calculator = new ExpressionCalculator();
         while (matcher.find()) {
             String lexeme = matcher.group();
             if (lexeme.matches(EXPR_PATTERN)) {
-                sentence.add(new Expression(lexeme));
+                sentence.add(new Lexeme(lexeme, Lexeme.Type.EXPRESSION));
             } else {
-                sentence.add(new Word(lexeme));
+                sentence.add(new Lexeme(lexeme, Lexeme.Type.WORD));
             }
         }
         return sentence;
