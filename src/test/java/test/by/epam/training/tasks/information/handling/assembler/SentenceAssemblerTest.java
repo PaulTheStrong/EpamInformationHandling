@@ -6,14 +6,16 @@ import by.epam.training.tasks.information.handling.creators.SentenceAssembler;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static by.epam.training.tasks.information.handling.components.Lexeme.*;
+
 import java.util.Arrays;
 
 public class SentenceAssemblerTest {
 
     private final Composite SENTENCE = new Composite(Arrays.asList(
-            new Lexeme("Hello", Lexeme.Type.WORD),
-            new Lexeme("world", Lexeme.Type.WORD),
-            new Lexeme("[1 + 2 * 3]", Lexeme.Type.EXPRESSION)
+            word("Hello"),
+            word("world"),
+            expression("[1 + 2 * 3]")
         )
     );
 

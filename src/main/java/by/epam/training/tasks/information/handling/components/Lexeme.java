@@ -9,9 +9,17 @@ public class Lexeme implements Component {
     private String value;
     private Type type;
 
-    public Lexeme(String value, Type type) {
+    private Lexeme(String value, Type type) {
         this.value = value;
         this.type = type;
+    }
+
+    public static Lexeme word(String value) {
+        return new Lexeme(value, Type.WORD);
+    }
+
+    public static Lexeme expression(String value) {
+        return new Lexeme(value, Type.EXPRESSION);
     }
 
     public String getValue() {

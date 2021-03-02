@@ -30,9 +30,9 @@ public class SentenceParser extends AbstractParser{
         while (matcher.find()) {
             String lexeme = matcher.group();
             if (lexeme.matches(EXPR_PATTERN)) {
-                sentence.add(new Lexeme(lexeme, Lexeme.Type.EXPRESSION));
+                sentence.add(Lexeme.expression(lexeme));
             } else {
-                sentence.add(new Lexeme(lexeme, Lexeme.Type.WORD));
+                sentence.add(Lexeme.word(lexeme));
             }
         }
         return sentence;

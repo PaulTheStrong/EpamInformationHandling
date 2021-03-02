@@ -5,6 +5,8 @@ import by.epam.training.tasks.information.handling.interpreter.ExpressionCalcula
 import org.junit.Assert;
 import org.junit.Test;
 
+import static by.epam.training.tasks.information.handling.components.Lexeme.expression;
+
 public class ExpressionCalculatorTest {
 
     private static final String TEST_STRING = "[5 3 6 * 7 4 - + * 5 /]";
@@ -12,7 +14,7 @@ public class ExpressionCalculatorTest {
     @Test
     public void testCalculateFunction() {
         //given
-        Lexeme expression = new Lexeme(TEST_STRING, Lexeme.Type.EXPRESSION);
+        Lexeme expression = expression(TEST_STRING);
         int expected = 21;
         ExpressionCalculator calculator = new ExpressionCalculator();
 
