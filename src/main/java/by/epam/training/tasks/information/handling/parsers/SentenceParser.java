@@ -37,5 +37,4 @@ public class SentenceParser extends AbstractParser{
         }
         return sentence;
     }
-
 }

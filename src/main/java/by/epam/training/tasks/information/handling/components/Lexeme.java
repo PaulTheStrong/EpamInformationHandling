@@ -1,5 +1,7 @@
 package by.epam.training.tasks.information.handling.components;
 
+import java.util.Objects;
+
 public class Lexeme implements Component {
 
     public enum Type {
@@ -24,5 +26,22 @@ public class Lexeme implements Component {
 
     public String getValue() {
         return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Lexeme lexeme = (Lexeme) o;
+        return value.equals(lexeme.value) && type == lexeme.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, type);
     }
 }
